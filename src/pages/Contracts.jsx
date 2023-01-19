@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom";
 
 function Contracts() {
 	const [contracts, setContracts] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const [loading, setLoading] = useState(false);
 	const { personal_code } = useParams();
 
 	useEffect(() => {
-		if (personal_code.length < 11 || !Number(personal_code)) return;
+		if (personal_code.length !== 11 || !Number(personal_code)) return;
 
 		getContracts();
 	}, [personal_code]);

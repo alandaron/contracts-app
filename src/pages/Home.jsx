@@ -8,13 +8,13 @@ function Home() {
 	const navigate = useNavigate();
 	const showContracts = () => {
 		const personal_code = personalCodeRef.current.value;
-		if (personal_code.length < 11) {
-			setError("Isikukood peab olema 11 numbrit pikk!");
+		if (!Number(personal_code)) {
+			setError("Isikukood peab sisaldama ainult numbreid!");
 			return;
 		}
 
-		if (!Number(personal_code)) {
-			setError("Isikukood peab sisaldama ainult numbreid!");
+		if (personal_code.length !== 11) {
+			setError("Isikukood peab olema 11 numbrit pikk!");
 			return;
 		}
 
