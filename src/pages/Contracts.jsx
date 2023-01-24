@@ -21,7 +21,7 @@ function Contracts() {
 		setLoading(true);
 		try {
 			const response = await fetch(
-				`http://strapi.aland.ee/api/contracts?populate=*&filters[personal_code][$eq]=${Number(
+				`https://strapi.aland.ee/api/contracts?populate=*&filters[personal_code][$eq]=${Number(
 					personal_code
 				)}`,
 				{
