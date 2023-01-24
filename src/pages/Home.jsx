@@ -21,25 +21,31 @@ function Home() {
 		navigate(`/${personal_code}`);
 	};
 	return (
-		<div className="flex flex-col items-center justify-center h-5/6">
-			<div className="my-2 w-1/2">
-				<label>
+		<div className="flex flex-col grow items-center justify-center bg-gradient-to-t from-blue-800 to-green-500 ">
+			<div className="w-1/2">
+				<label className="text-white">
 					Sisesta isikukood:
 					<input
-						className="border rounded-md p-2 appearance-none outline-none w-full tracking-widest"
+						className="border rounded-md p-3 text-lg appearance-none outline-none w-full backdrop-blur-lg opacity-40 tracking-widest text-black"
 						ref={personalCodeRef}
 						type="text"
 						maxLength={11}
 					/>
-					{error && <div className="text-red-600">{error}</div>}
+					{error && (
+						<div className="text-red-100 bg-red-700 rounded-md my-2 px-2 py-1">
+							{error}
+						</div>
+					)}
 				</label>
 				<div className="my-2"></div>
-				<button
-					className="border rounded-md p-2 bg-blue-600 text-white hover:bg-blue-700"
-					onClick={showContracts}
-				>
-					Näita töölepinguid
-				</button>
+				<div className="text-center">
+					<button
+						className="border border-black rounded-md p-2 bg-gray-800 text-white hover:bg-black"
+						onClick={showContracts}
+					>
+						Näita töölepinguid
+					</button>
+				</div>
 			</div>
 		</div>
 	);
